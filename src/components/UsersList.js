@@ -1,17 +1,25 @@
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
+
+import UsersListItem from 'components/UsersListItem'
+import RequestStatusOverlay from 'components/RequestStatusOverlay'
 
 export default function UsersList() {
   const users = useSelector(state => state.users.items)
-  const isRequestPending = useSelector(state => state.users.pending)
 
   return (
-    <>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.login}</li>
-        ))}
-      </ul>
-      {isRequestPending ? <p>Searching</p> : null}
-    </>
+    <Wrapper>
+      {users.map(user => (
+        <UsersListItem key={user.id} user={user} />
+      ))}
+
+      <RequestStatusOverlay />
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`

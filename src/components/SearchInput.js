@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import store from 'store'
-import { fetchUsers } from 'reducers/users'
+import { fetchUsers, clearUsers } from 'reducers/users'
 import useDebounce from 'hooks/useDebounce'
 
 export default function SearchInput() {
@@ -14,6 +14,7 @@ export default function SearchInput() {
 
   function handleDebouncedValueChange() {
     if (debouncedValue) store.dispatch(fetchUsers(debouncedValue))
+    else store.dispatch(clearUsers())
   }
 
   useEffect(handleDebouncedValueChange, [debouncedValue])

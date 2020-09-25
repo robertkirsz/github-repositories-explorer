@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import store from 'store'
+import { GlobalStyle } from 'styles'
 
 const render = () => {
   const App = require('components/App').default
@@ -9,6 +10,7 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <App />
+      <GlobalStyle />
     </Provider>,
     document.getElementById('root')
   )
@@ -16,7 +18,7 @@ const render = () => {
 
 render()
 
-// Reuse component tree if any component is recompiled during hot-reloading
+// Reuse components tree if any component is recompiled during hot-reloading
 if (process.env.NODE_ENV === 'development' && module.hot) {
   module.hot.accept('components/App', render)
 }

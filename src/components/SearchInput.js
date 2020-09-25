@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styled from 'styled-components'
 
 import store from 'store'
 import { fetchUsers, clearUsers } from 'reducers/users'
@@ -19,5 +20,21 @@ export default function SearchInput() {
 
   useEffect(handleDebouncedValueChange, [debouncedValue])
 
-  return <input placeholder="Username" value={value} onChange={handleChange} />
+  return <Input placeholder="Username" value={value} onChange={handleChange} />
 }
+
+const Input = styled.input`
+  padding: 4px 8px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+
+  font-size: 24px;
+
+  transition: 0.3s;
+
+  &:focus {
+    border-color: black;
+  }
+`

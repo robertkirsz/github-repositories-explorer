@@ -1,17 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   output: {
     path: `${__dirname}/dist`
   },
   module: {
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }
-    ]
+    rules: [{ test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }]
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html', filename: './index.html' })
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html', filename: './index.html' })],
   resolve: {
     // Allow absolute imports from these two directories 
     modules: ['src', 'node_modules']

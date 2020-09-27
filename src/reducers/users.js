@@ -1,17 +1,19 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-
-// Get only selected fields so that we don't pollute the store with data we're not interested in
-const prepareUsers = users => users.map(({ id, login, repos }) => ({ id, login, repos }))
-
-const prepareRepos = repos =>
-  repos.map(({ id, name, description, stargazers_count }) => ({ id, name, description, stargazers_count }))
+import { getUser, getFields } from 'utils'
 
 export const fetchUsers = createAsyncThunk('fetchUsers', username =>
-  fetch(`https://api.github.com/search/users?q=${username}&page=1&per_page=5`).then(response => response.json())
+  fetch(`https://api.github.com/search/users?q=${username}&page=1&per_page=5`).then(response => {
+    if (response.status === 403) throw new Error('403 - you are searching too often!')
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
+    return response.json()
+  })
 )
 
 export const fetchUserRepos = createAsyncThunk('fetchUserRepos', username =>
-  fetch(`https://api.github.com/users/${username}/repos?page=1&per_page=10`).then(response => response.json())
+  fetch(`https://api.github.com/users/${username}/repos`).then(response => {
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
+    return response.json()
+  })
 )
 
 const usersSlice = createSlice({
@@ -19,7 +21,7 @@ const usersSlice = createSlice({
   initialState: {
     items: [],
     currentPage: 1,
-    pending: false
+    isUsernameBeingSearched: false
   },
   reducers: {
     clearUsers(state) {
@@ -28,30 +30,32 @@ const usersSlice = createSlice({
   },
   extraReducers: {
     [fetchUsers.pending](state) {
-      state.pending = true
+      state.isUsernameBeingSearched = true
     },
     [fetchUsers.fulfilled](state, action) {
-      state.items = prepareUsers(action.payload.items)
-      state.pending = false
+      console.log('fulfilled')
+      state.items = action.payload.items.map(getFields(['id', 'login', 'repos']))
+      state.isUsernameBeingSearched = false
     },
     [fetchUsers.rejected](state, action) {
       console.error('💥 Oh no, something went wrong!')
       console.error(`${action.error.name}: ${action.error.message}`)
-      state.pending = false
+      state.isUsernameBeingSearched = false
     },
-    [fetchUserRepos.pending](state) {
-      state.pending = true
+    [fetchUserRepos.pending](state, action) {
+      const user = getUser(action.meta.arg, state)
+      user.areReposBeingFetched = true
     },
     [fetchUserRepos.fulfilled](state, action) {
-      const login = action.meta.arg
-      const itemIndex = state.items.findIndex(item => item.login === login)
-      state.items[itemIndex].repos = prepareRepos(action.payload)
-      state.pending = false
+      const user = getUser(action.meta.arg, state)
+      user.repos = action.payload.map(getFields(['id', 'name', 'description', 'stargazers_count', 'html_url']))
+      user.areReposBeingFetched = false
     },
     [fetchUserRepos.rejected](state, action) {
       console.error('💥 Oh no, something went wrong!')
       console.error(`${action.error.name}: ${action.error.message}`)
-      state.pending = false
+      const user = getUser(action.meta.arg, state)
+      user.areReposBeingFetched = false
     }
   }
 })

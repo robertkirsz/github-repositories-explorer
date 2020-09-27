@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html', filename: './index.html' })],
   resolve: {
-    // Allow absolute imports from these two directories 
+    // Allow absolute imports from these two directories
     modules: ['src', 'node_modules']
   },
   devServer: {
@@ -20,4 +20,5 @@ module.exports = {
     // Less output in the terminal, and a bit faster build too!
     stats: 'errors-only'
   },
+  devtool: 'eval-source-map'
 }

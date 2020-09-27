@@ -1,27 +1,17 @@
-import styled from 'styled-components'
-
+import Div from 'styled-kit/Div'
 import ReposListItem from 'components/ReposListItem'
+import InfoMessage from 'components/InfoMessage'
 
-export default function ReposList({ repos = [] }) {
-  if (repos.length === 0) return <NoReposMessage>User has no repos :(</NoReposMessage>
+export default function ReposList({ areReposBeingFetched = false, repos = [] }) {
+  if (areReposBeingFetched) return <InfoMessage center>Loading...</InfoMessage>
+
+  if (!repos.length) return <InfoMessage center>User has no repos :(</InfoMessage>
 
   return (
-    <Wrapper>
+    <Div column listTop maxHeight={368} paddingLeft={24} css="overflow: auto;">
       {repos.map(repo => (
         <ReposListItem key={repo.id} repo={repo} />
       ))}
-    </Wrapper>
+    </Div>
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const NoReposMessage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-`

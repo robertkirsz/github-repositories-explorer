@@ -1,25 +1,15 @@
 import { useSelector } from 'react-redux'
-import styled from 'styled-components'
-
+import Div from 'styled-kit/Div'
 import UsersListItem from 'components/UsersListItem'
-import RequestStatusOverlay from 'components/RequestStatusOverlay'
 
 export default function UsersList() {
   const users = useSelector(state => state.users.items)
 
   return (
-    <Wrapper>
+    <Div column listTop css="overflow: auto;">
       {users.map(user => (
         <UsersListItem key={user.id} user={user} />
       ))}
-
-      <RequestStatusOverlay />
-    </Wrapper>
+    </Div>
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`

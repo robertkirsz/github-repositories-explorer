@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import styled from 'styled-components'
-
+import Div from 'styled-kit/Div'
 import store from 'store'
 import { fetchUserRepos } from 'reducers/users'
 import ReposList from 'components/ReposList'
@@ -15,21 +14,21 @@ export default function UsersListItem({ user = {} }) {
   }
 
   return (
-    <>
-      <Wrapper onClick={handleClick}>
-        <span>{user.login}</span>
+    <Div column flexNone listTop>
+      <Div
+        justifyBetween
+        itemsCenter
+        minHeight={40}
+        padding="12px 8px"
+        background="#f2f2f2"
+        radius={3}
+        onClick={handleClick}
+      >
+        <span className="truncated">{user.login}</span>
         <Chevron isActive={isOpened} />
-      </Wrapper>
+      </Div>
 
-      {isOpened && <ReposList repos={user.repos} />}
-    </>
+      {isOpened && <ReposList areReposBeingFetched={user.areReposBeingFetched} repos={user.repos} />}
+    </Div>
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 4px;
-  background: lightgray;
-  border: 1px solid;
-`

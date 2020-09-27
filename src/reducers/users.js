@@ -3,12 +3,15 @@ import { getUser, getFields } from 'utils'
 
 export const fetchUsers = createAsyncThunk(
   'fetchUsers',
-  username =>
-    fetch(`https://api.github.com/search/users?q=${username}&page=1&per_page=5`).then(response => {
+  ({ username }, { getState }) => {
+    const { currentPage } = getState().users
+
+    return fetch(`https://api.github.com/search/users?q=${username}&page=${currentPage}&per_page=5`).then(response => {
       if (response.status === 403) throw new Error('403 - you are searching too often!')
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
       return response.json()
-    }),
+    })
+  },
   {
     condition: (_, { getState }) => {
       if (getState().users.isUsernameBeingSearched) return false
@@ -36,19 +39,26 @@ const usersSlice = createSlice({
   initialState: {
     items: [],
     currentPage: 1,
+    lastSearchedUsername: '',
     isUsernameBeingSearched: false
   },
   reducers: {
     clearUsers(state) {
       state.items = []
+      state.lastSearchedUsername = ''
     }
   },
   extraReducers: {
-    [fetchUsers.pending](state) {
+    [fetchUsers.pending](state, action) {
+      const { username, searchMore } = action.meta.arg
+      state.lastSearchedUsername = username
       state.isUsernameBeingSearched = true
+      state.currentPage = searchMore ? state.currentPage + 1 : 1
     },
     [fetchUsers.fulfilled](state, action) {
-      state.items = action.payload.items.map(getFields(['id', 'login', 'repos']))
+      const { searchMore } = action.meta.arg
+      const newItems = action.payload.items.map(getFields(['id', 'login', 'repos']))
+      state.items = searchMore ? [...state.items, ...newItems] : newItems
       state.isUsernameBeingSearched = false
     },
     [fetchUsers.rejected](state, action) {

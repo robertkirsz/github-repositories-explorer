@@ -1,14 +1,16 @@
 import { useSelector } from 'react-redux'
 import InfoMessage from 'components/InfoMessage'
 
-export default function SearchInfo({ username = '' }) {
-  const users = useSelector(state => state.users.items)
-  const isUsernameBeingSearched = useSelector(state => state.users.isUsernameBeingSearched)
+export default function SearchInfo() {
+  const { items, lastSearchedUsername, isUsernameBeingSearched } = useSelector(({ users }) => users)
 
   if (isUsernameBeingSearched) return <InfoMessage center>Loading...</InfoMessage>
 
-  if (username)
-    return <InfoMessage>{users.length ? `Showing users for "${username}"` : `No users to display`}</InfoMessage>
+  if (lastSearchedUsername) {
+    return (
+      <InfoMessage>{items.length ? `Showing users for "${lastSearchedUsername}"` : `No users to display`}</InfoMessage>
+    )
+  }
 
   return null
 }

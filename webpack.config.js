@@ -1,4 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   output: {
@@ -7,7 +8,7 @@ module.exports = {
   module: {
     rules: [{ test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }]
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html', filename: './index.html' })],
+  plugins: [new HtmlPlugin({ template: 'src/index.html' }), new CopyPlugin({ patterns: [{ from: 'src/static' }] })],
   resolve: {
     // Allow absolute imports from these two directories
     modules: ['src', 'node_modules']

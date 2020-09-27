@@ -33,7 +33,6 @@ const usersSlice = createSlice({
       state.isUsernameBeingSearched = true
     },
     [fetchUsers.fulfilled](state, action) {
-      console.log('fulfilled')
       state.items = action.payload.items.map(getFields(['id', 'login', 'repos']))
       state.isUsernameBeingSearched = false
     },

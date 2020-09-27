@@ -23,6 +23,7 @@ export default function UsersListItem({ user = {} }) {
         background="#f2f2f2"
         radius={3}
         onClick={handleClick}
+        clickable
       >
         <span className="truncated">{user.login}</span>
         <Chevron isActive={isOpened} />

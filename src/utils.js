@@ -1,4 +1,4 @@
-export const getUser = (login, state) => state.items[state.items.findIndex(user => user.login === login)]
+export const getUser = (login, users) => users[users.findIndex(user => user.login === login)]
 
 export const getFields = fieldnames => item =>
   fieldnames.reduce(

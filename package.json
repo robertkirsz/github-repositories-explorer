@@ -7,6 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/robertkirsz/github-repositories-explorer.git"
   },
+  "homepage": "https://repos-explorer.netlify.app",
   "author": "Robert Kirsz <robert.kirsz@gmail.com>",
   "license": "MIT",
   "scripts": {

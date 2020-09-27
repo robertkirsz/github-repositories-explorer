@@ -10,7 +10,7 @@ export default function UsersListItem({ user = {} }) {
 
   function handleClick() {
     setIsOpened(state => !state)
-    if (!user.repos) store.dispatch(fetchUserRepos(user.login))
+    store.dispatch(fetchUserRepos(user.login))
   }
 
   return (

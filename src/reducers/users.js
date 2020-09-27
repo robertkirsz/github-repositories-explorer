@@ -1,19 +1,34 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { getUser, getFields } from 'utils'
 
-export const fetchUsers = createAsyncThunk('fetchUsers', username =>
-  fetch(`https://api.github.com/search/users?q=${username}&page=1&per_page=5`).then(response => {
-    if (response.status === 403) throw new Error('403 - you are searching too often!')
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
-    return response.json()
-  })
+export const fetchUsers = createAsyncThunk(
+  'fetchUsers',
+  username =>
+    fetch(`https://api.github.com/search/users?q=${username}&page=1&per_page=5`).then(response => {
+      if (response.status === 403) throw new Error('403 - you are searching too often!')
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
+      return response.json()
+    }),
+  {
+    condition: (_, { getState }) => {
+      if (getState().users.isUsernameBeingSearched) return false
+    }
+  }
 )
 
-export const fetchUserRepos = createAsyncThunk('fetchUserRepos', username =>
-  fetch(`https://api.github.com/users/${username}/repos`).then(response => {
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
-    return response.json()
-  })
+export const fetchUserRepos = createAsyncThunk(
+  'fetchUserRepos',
+  username =>
+    fetch(`https://api.github.com/users/${username}/repos`).then(response => {
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
+      return response.json()
+    }),
+  {
+    condition: (username, { getState }) => {
+      const { reposAlreadyFetched, areReposBeingFetched } = getUser(username, getState().users.items)
+      if (reposAlreadyFetched || areReposBeingFetched) return false
+    }
+  }
 )
 
 const usersSlice = createSlice({
@@ -42,18 +57,19 @@ const usersSlice = createSlice({
       state.isUsernameBeingSearched = false
     },
     [fetchUserRepos.pending](state, action) {
-      const user = getUser(action.meta.arg, state)
+      const user = getUser(action.meta.arg, state.items)
       user.areReposBeingFetched = true
     },
     [fetchUserRepos.fulfilled](state, action) {
-      const user = getUser(action.meta.arg, state)
+      const user = getUser(action.meta.arg, state.items)
       user.repos = action.payload.map(getFields(['id', 'name', 'description', 'stargazers_count', 'html_url']))
       user.areReposBeingFetched = false
+      user.reposAlreadyFetched = true
     },
     [fetchUserRepos.rejected](state, action) {
       console.error('💥 Oh no, something went wrong!')
       console.error(`${action.error.name}: ${action.error.message}`)
-      const user = getUser(action.meta.arg, state)
+      const user = getUser(action.meta.arg, state.items)
       user.areReposBeingFetched = false
     }
   }

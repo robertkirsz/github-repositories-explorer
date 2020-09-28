@@ -30,7 +30,7 @@ export default function UsersListItem({ user = {} }) {
         <Chevron isActive={isOpened} />
       </Div>
 
-      {isOpened && <ReposList areReposBeingFetched={user.areReposBeingFetched} repos={user.repos} />}
+      <ReposList isActive={isOpened} areReposBeingFetched={user.areReposBeingFetched} repos={user.repos} />
     </Div>
   )
 }

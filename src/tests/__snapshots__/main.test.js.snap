@@ -23,7 +23,6 @@ exports[`The flow works 1`] = `
     </div>
     <div
       class="sc-1qr1lby-0 UsersList___StyledDiv-sc-1w8kqhz-0 igLjTD eIGSlG"
-      role="users-list"
     >
       <div
         class="sc-1qr1lby-0 bBOvBH"
@@ -61,6 +60,7 @@ exports[`The flow works 1`] = `
                 John's repo
               </a>
               <span>
+                2
                  
                 <span
                   aria-hidden="false"

@@ -38,7 +38,7 @@ const server = setupServer(
           id: 1,
           name: "John's repo",
           description: "John's first project",
-          stargazers_cound: 2,
+          stargazers_count: 2,
           html_url: 'https://github.com/john/johns-repo'
         }
       ])

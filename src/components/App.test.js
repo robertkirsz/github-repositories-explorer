@@ -72,10 +72,10 @@ afterAll(() => server.close())
 describe('The main app flow', () => {
   it('The flow works', async () => {
     // Render the app
-    const { container, getByText, findByText, getByPlaceholderText } = render(<App />)
+    const { container, findByText, getByText, getByRole, getByPlaceholderText } = render(<App />)
 
     // Title should be visible from the start
-    expect(getByText('Repos Explorer')).toBeVisible()
+    expect(getByRole('Logo')).toBeVisible()
 
     // Type "john" into the text field
     fireEvent.change(getByPlaceholderText('Enter username'), { target: { value: 'john' } })
@@ -92,8 +92,8 @@ describe('The main app flow', () => {
     expect(getByText('john')).toBeVisible()
     expect(getByText('johnny')).toBeVisible()
 
-    // Click the "Search more" button
-    fireEvent.click(getByText('Search more'))
+    // Click the "Show more" button
+    fireEvent.click(getByText('Show more'))
 
     // Wait for another 'fetchUsers' API response
     expect(await findByText('Loading...')).toBeVisible()

@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     
-    margin: 16px 8px 8px;
+    margin: 16px 16px 8px;
 
     ${queries.mobile`
       max-height: calc(100vh - 24px);

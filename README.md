@@ -51,7 +51,7 @@ I didn't check Redux docs in ages and I was surprised in now something called [R
 I think I'll be using this toolkit in the future, it reduces the infamous Redux boilerplate significantly. I'm perfectly fine (and at that point much more fluent) working with Redux the old way though 👍
 
 ## UX changes
-I decided to make some changes in the UX 😬 I normally NEVER DO THAT! I always stick to the designs and try to implement them as close to the intentions of the authors as possible. I started as a web designer myself, so I have respect for the work designers do. But here I decided it will be more fun to replace the "submit" button with an input that makes requests automatically as you type. I also added a "search more" button that appends more search results to the existing list.
+I decided to make some changes in the UX 😬 I normally NEVER DO THAT! I always stick to the designs and try to implement them as close to the intentions of the authors as possible. I started as a web designer myself, so I have respect for the work designers do. But here I decided it will be more fun to replace the "Search" button with an input that makes requests automatically as you type. I also added a "Show more" button that appends more search results to the existing list.
 
 ## Custom modules
 I'm using [styled-kit](https://www.npmjs.com/package/styled-kit) - it's a tiny styled-components-based npm package that exposes a `Div` component I wrote years ago. It's a generic wrapper element useful for when we need a container for some other components. It's flex-based and makes it easy to control the layout and spacing of its children.

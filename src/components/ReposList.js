@@ -8,7 +8,7 @@ export default function ReposList({ areReposBeingFetched = false, repos = [] }) 
   if (!repos.length) return <InfoMessage center>User has no repos :(</InfoMessage>
 
   return (
-    <Div column listTop maxHeight={368} mobile={{ margin: '0 24px' }} css="overflow: auto;">
+    <Div column listTop={16} maxHeight={368} mobile={{ margin: '0 48px' }} css="overflow: auto;">
       {repos.map(repo => (
         <ReposListItem key={repo.id} repo={repo} />
       ))}

@@ -6,23 +6,23 @@ exports[`The main app flow The flow works 1`] = `
     class="sc-1qr1lby-0 jBmPKi"
     width="100%"
   >
-    <h1
-      class="title"
-    >
-      Repos Explorer
-    </h1>
+    <img
+      class="Logo__Img-sc-1rvhhdn-0 jNLuxm"
+      role="Logo"
+      src="android-chrome-192x192.png"
+    />
     <input
-      class="DebouncedInput__Input-sc-13ol9vv-0 hktPfd"
+      class="DebouncedInput__Input-sc-13ol9vv-0 hktPfd SearchUsersInput___StyledDebouncedInput-sc-1wtt78f-0 jlbPhN"
       placeholder="Enter username"
       value="john"
     />
     <div
-      class="InfoMessage-sc-4uxl10-0 gIZCtt"
+      class="InfoMessage-sc-4uxl10-0 kEJJce"
     >
       Showing users for "john"
     </div>
     <div
-      class="sc-1qr1lby-0 igLjTD"
+      class="sc-1qr1lby-0 kHgghI"
     >
       <div
         class="sc-1qr1lby-0 bBOvBH"
@@ -41,38 +41,41 @@ exports[`The main app flow The flow works 1`] = `
           />
         </div>
         <div
-          class="sc-1qr1lby-0 ReposList___StyledDiv-sc-1ucb7ap-0 hhVwIB imZKwy"
+          class="sc-1qr1lby-0 ReposList___StyledDiv-sc-1ucb7ap-0 kvLbTO imZKwy"
         >
           <div
-            class="sc-1qr1lby-0 ReposListItem___StyledDiv-l2gazs-0 fisVz hBcvBQ"
+            class="sc-1qr1lby-0 ReposListItem___StyledDiv-l2gazs-0 iOZwrW hBcvBQ"
             radius="3"
           >
             <div
-              class="sc-1qr1lby-0 eyVDmv"
+              class="sc-1qr1lby-0 gDRfdV"
               font-weight="bold"
             >
               <a
-                as="a"
+                class="ReposListItem___StyledA-l2gazs-1 dlzyYY truncated"
                 href="https://github.com/john/johns-repo"
                 rel="noreferrer"
                 target="_blank"
               >
                 John's repo
               </a>
-              <span>
-                2
+              <div
+                class="sc-1qr1lby-0 cppYBD"
+              >
+                <span>
+                  2
+                </span>
                  
                 <span
-                  aria-hidden="false"
-                  aria-label="Star emoji"
                   class="Emoji-sc-1mu2kvi-0 kHwBut"
-                  role="img"
                 >
                   ⭐️
                 </span>
-              </span>
+              </div>
             </div>
-            <span>
+            <span
+              class="ReposListItem___StyledSpan-l2gazs-2 fMShgE"
+            >
               John's first project
             </span>
           </div>
@@ -114,9 +117,9 @@ exports[`The main app flow The flow works 1`] = `
       </div>
     </div>
     <button
-      class="SearchMoreButton___StyledButton-ec5qj5-0 gldqLk"
+      class="SearchMoreButton__Button-ec5qj5-0 SearchMoreButton___StyledButton-ec5qj5-1 fbBUTl gUcckN"
     >
-      Search more
+      Show more
     </button>
   </div>
 </div>

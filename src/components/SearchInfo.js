@@ -4,7 +4,7 @@ import InfoMessage from 'components/InfoMessage'
 export default function SearchInfo() {
   const { items, lastSearchedUsername, isUsernameBeingSearched } = useSelector(({ users }) => users)
 
-  if (isUsernameBeingSearched) return <InfoMessage center>Loading...</InfoMessage>
+  if (isUsernameBeingSearched) return <InfoMessage>Loading...</InfoMessage>
 
   if (lastSearchedUsername) {
     return (

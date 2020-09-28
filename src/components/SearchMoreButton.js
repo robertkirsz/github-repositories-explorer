@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
 import store from 'store'
 import { fetchUsers } from 'reducers/users'
 
@@ -12,8 +13,19 @@ export default function SearchMoreButton() {
   if (!items.length || lastSearchedUsername === '') return null
 
   return (
-    <button disabled={isUsernameBeingSearched} onClick={searchMore} css="align-self: center;">
-      Search more
-    </button>
+    <Button disabled={isUsernameBeingSearched} onClick={searchMore} css="align-self: center;">
+      Show more
+    </Button>
   )
 }
+
+const Button = styled.button`
+  padding: 8px 0;
+  opacity: 0.6;
+  text-align: center;
+  text-decoration: underline;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+`

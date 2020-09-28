@@ -11,5 +11,12 @@ export default function SearchUsersInput() {
     else store.dispatch(clearUsers())
   }
 
-  return <DebouncedInput placeholder="Enter username" value={lastSearchedUsername} onChange={handleSearch} />
+  return (
+    <DebouncedInput
+      placeholder="Enter username"
+      value={lastSearchedUsername}
+      onChange={handleSearch}
+      css="align-self: center;"
+    />
+  )
 }

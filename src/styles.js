@@ -8,7 +8,7 @@ export const queries = createQueries({
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    margin: 0;
+    margin: 16px 8px;
     font-family: sans-serif;
     box-sizing: border-box;
     font-size: 16px;
@@ -29,8 +29,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .title {
-    margin: 0.5em 0;
-    /* min font-size, scalar, max font-size */
+    margin: 0;
+    padding: 0.5em 0;
+    /* Fluid font-size: min font-size, scalar, max font-size */
     font-size: clamp(1rem, 5vw, 2rem);
     text-align: center;
   }

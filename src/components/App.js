@@ -3,15 +3,17 @@ import UsersList from 'components/UsersList'
 import SearchInfo from 'components/SearchInfo'
 import SearchMoreButton from 'components/SearchMoreButton'
 import SearchUsersInput from 'components/SearchUsersInput'
+import ErrorMessage from 'components/ErrorMessage'
 
 export default function App() {
   return (
-    <Div column listTop width="100%" maxWidth={480} padding={8} css="overflow: hidden;">
+    <Div column listTop width="100%" maxWidth={480} css="overflow: hidden;">
       <h1 className="title">Repos Explorer</h1>
       <SearchUsersInput />
       <SearchInfo />
       <UsersList />
       <SearchMoreButton />
+      <ErrorMessage />
     </Div>
   )
 }

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The flow works 1`] = `
+exports[`The main app flow The flow works 1`] = `
 <div>
   <div
-    class="sc-1qr1lby-0 App___StyledDiv-sc-1ruxc1o-0 gHPidm fQgRfj"
+    class="sc-1qr1lby-0 App___StyledDiv-sc-1ruxc1o-0 jBmPKi fQgRfj"
     width="100%"
   >
     <h1
@@ -48,8 +48,8 @@ exports[`The flow works 1`] = `
             radius="3"
           >
             <div
-              class="sc-1qr1lby-0 ctapDY"
-              font-weight="600"
+              class="sc-1qr1lby-0 eyVDmv"
+              font-weight="bold"
             >
               <a
                 as="a"

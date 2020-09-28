@@ -33,9 +33,9 @@ npm run prettier
 npm test
 ```
 
-You can also run `npm run test:coverage` to generate coverage report.
+You can also run `npm run test:coverage` to generate coverage report (it will be available in `coverage` folder).
 
-I'm using [Testing Library](https://testing-library.com/) with Jest. I'm focusing on testing the flow from the user perspective and not the implementation details (although I do some `store.getState()` checks here and there).
+I'm using [Testing Library](https://testing-library.com/) with Jest and [MSW](https://mswjs.io/) form mocking API requests. I'm focusing on testing the flow from the user perspective and not the implementation details (although I do some `store.getState()` checks here and there).
 
 ## Build system
 I decided to write a custom webpack + Babel setup, rather than using a ready-made solution like [Create React App](https://create-react-app.dev/) (which I like a lot) mostly because I didn't have an opportunity to do that recently and I like writing build setups from scratch.

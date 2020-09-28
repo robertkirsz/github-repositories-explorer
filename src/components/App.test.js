@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { render, fireEvent } from 'tests/test-utils'
+import { render, fireEvent } from 'test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import store from 'store'
 import { resetUsersStore } from 'reducers/users'

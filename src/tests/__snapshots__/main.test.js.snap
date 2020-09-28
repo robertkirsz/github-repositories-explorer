@@ -3,7 +3,7 @@
 exports[`The main app flow The flow works 1`] = `
 <div>
   <div
-    class="sc-1qr1lby-0 App___StyledDiv-sc-1ruxc1o-0 jBmPKi fQgRfj"
+    class="sc-1qr1lby-0 jBmPKi"
     width="100%"
   >
     <h1
@@ -22,7 +22,7 @@ exports[`The main app flow The flow works 1`] = `
       Showing users for "john"
     </div>
     <div
-      class="sc-1qr1lby-0 UsersList___StyledDiv-sc-1w8kqhz-0 igLjTD eIGSlG"
+      class="sc-1qr1lby-0 igLjTD"
     >
       <div
         class="sc-1qr1lby-0 bBOvBH"

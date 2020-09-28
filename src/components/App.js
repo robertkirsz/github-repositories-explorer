@@ -7,7 +7,7 @@ import ErrorMessage from 'components/ErrorMessage'
 
 export default function App() {
   return (
-    <Div column listTop width="100%" maxWidth={480} css="overflow: hidden;">
+    <Div column listTop width="100%" maxWidth={480} mobile="overflow: hidden;">
       <h1 className="title">Repos Explorer</h1>
       <SearchUsersInput />
       <SearchInfo />

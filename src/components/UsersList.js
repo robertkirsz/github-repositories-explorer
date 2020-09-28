@@ -6,7 +6,7 @@ export default function UsersList() {
   const users = useSelector(state => state.users.items)
 
   return (
-    <Div column listTop css="overflow: auto;">
+    <Div column listTop mobile="overflow: auto;">
       {users.map(user => (
         <UsersListItem key={user.id} user={user} />
       ))}

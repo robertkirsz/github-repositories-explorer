@@ -8,7 +8,7 @@ export const queries = createQueries({
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    margin: 16px 8px;
+    margin: 0;
     font-family: sans-serif;
     box-sizing: border-box;
     font-size: 16px;
@@ -24,8 +24,13 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
-    overflow: hidden;
+    
+    margin: 16px 8px 8px;
+
+    ${queries.mobile`
+      max-height: calc(100vh - 24px);
+      overflow: hidden;
+    `}
   }
 
   .title {

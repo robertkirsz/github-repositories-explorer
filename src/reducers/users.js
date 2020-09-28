@@ -57,7 +57,7 @@ const usersSlice = createSlice({
     },
     [fetchUsers.fulfilled](state, action) {
       const { searchMore } = action.meta.arg
-      const newItems = action.payload.items.map(getFields(['id', 'login', 'repos']))
+      const newItems = action.payload.items.map(getFields(['id', 'login']))
       state.items = searchMore ? [...state.items, ...newItems] : newItems
       state.isUsernameBeingSearched = false
     },

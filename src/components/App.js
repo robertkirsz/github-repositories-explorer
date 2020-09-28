@@ -7,7 +7,7 @@ import SearchUsersInput from 'components/SearchUsersInput'
 export default function App() {
   return (
     <Div column listTop width="100%" maxWidth={480} padding={8} css="overflow: hidden;">
-      <h1 css="text-align: center;">GitHub Repositories Explorer</h1>
+      <h1 className="title">Repos Explorer</h1>
       <SearchUsersInput />
       <SearchInfo />
       <UsersList />

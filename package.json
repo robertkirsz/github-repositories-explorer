@@ -1,7 +1,7 @@
 {
   "name": "github-repositories-explorer",
   "version": "1.0.0",
-  "description": "GitHub Repositories Explorer",
+  "description": "Repos Explorer",
   "main": "src/index.js",
   "repository": {
     "type": "git",

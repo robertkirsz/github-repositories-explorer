@@ -1,15 +1,18 @@
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 import store from 'store'
-import { GlobalStyle } from 'styles'
+import { GlobalStyle, queries } from 'styles'
 
 const render = () => {
   const App = require('components/App').default
 
   ReactDOM.render(
     <Provider store={store}>
-      <App />
-      <GlobalStyle />
+      <ThemeProvider theme={{ styledKitMediaQueries: queries }}>
+        <App />
+        <GlobalStyle />
+      </ThemeProvider>
     </Provider>,
     document.getElementById('root')
   )

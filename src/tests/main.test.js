@@ -54,7 +54,7 @@ test('The flow works', async () => {
   const { container, getByText, findByText, getByPlaceholderText } = render(<App />)
 
   // Title should be visible from the start
-  expect(getByText('GitHub Repositories Explorer')).toBeVisible()
+  expect(getByText('Repos Explorer')).toBeVisible()
 
   // Type "john" into the text field
   fireEvent.change(getByPlaceholderText('Enter username'), { target: { value: 'john' } })

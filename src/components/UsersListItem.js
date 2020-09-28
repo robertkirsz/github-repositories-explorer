@@ -19,7 +19,8 @@ export default function UsersListItem({ user = {} }) {
         justifyBetween
         itemsCenter
         minHeight={40}
-        padding="12px 8px"
+        padding={8}
+        desktop={{ padding: '12px 8px' }}
         background="#f2f2f2"
         radius={3}
         onClick={handleClick}

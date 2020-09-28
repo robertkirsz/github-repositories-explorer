@@ -7,12 +7,12 @@ exports[`The flow works 1`] = `
     width="100%"
   >
     <h1
-      class="App___StyledH-sc-1ruxc1o-1 ela-dlJ"
+      class="title"
     >
-      GitHub Repositories Explorer
+      Repos Explorer
     </h1>
     <input
-      class="DebouncedInput__Input-sc-13ol9vv-0 cnLTLN"
+      class="DebouncedInput__Input-sc-13ol9vv-0 hktPfd"
       placeholder="Enter username"
       value="john"
     />
@@ -28,7 +28,7 @@ exports[`The flow works 1`] = `
         class="sc-1qr1lby-0 bBOvBH"
       >
         <div
-          class="sc-1qr1lby-0 jRuxNE"
+          class="sc-1qr1lby-0 gYdXUP"
           radius="3"
         >
           <span
@@ -41,10 +41,10 @@ exports[`The flow works 1`] = `
           />
         </div>
         <div
-          class="sc-1qr1lby-0 ReposList___StyledDiv-sc-1ucb7ap-0 dPhwYJ imZKwy"
+          class="sc-1qr1lby-0 ReposList___StyledDiv-sc-1ucb7ap-0 hhVwIB imZKwy"
         >
           <div
-            class="sc-1qr1lby-0 fisVz"
+            class="sc-1qr1lby-0 ReposListItem___StyledDiv-l2gazs-0 fisVz hBcvBQ"
             radius="3"
           >
             <div
@@ -82,7 +82,7 @@ exports[`The flow works 1`] = `
         class="sc-1qr1lby-0 bBOvBH"
       >
         <div
-          class="sc-1qr1lby-0 jRuxNE"
+          class="sc-1qr1lby-0 gYdXUP"
           radius="3"
         >
           <span
@@ -99,7 +99,7 @@ exports[`The flow works 1`] = `
         class="sc-1qr1lby-0 bBOvBH"
       >
         <div
-          class="sc-1qr1lby-0 jRuxNE"
+          class="sc-1qr1lby-0 gYdXUP"
           radius="3"
         >
           <span

@@ -1,6 +1,6 @@
 {
-  "name": "GitHub Repositories Explorer",
-  "short_name": "Repo Explorer",
+  "name": "Repos Explorer",
+  "short_name": "Repos Explorer",
   "start_url": "./index.html",
   "icons": [
     {

@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The flow works 1`] = `
+<div>
+  <div
+    class="sc-1qr1lby-0 App___StyledDiv-sc-1ruxc1o-0 gHPidm fQgRfj"
+    width="100%"
+  >
+    <h1
+      class="App___StyledH-sc-1ruxc1o-1 ela-dlJ"
+    >
+      GitHub Repositories Explorer
+    </h1>
+    <input
+      class="DebouncedInput__Input-sc-13ol9vv-0 cnLTLN"
+      placeholder="Enter username"
+      value="john"
+    />
+    <div
+      class="InfoMessage-sc-4uxl10-0 gIZCtt"
+    >
+      Showing users for "john"
+    </div>
+    <div
+      class="sc-1qr1lby-0 UsersList___StyledDiv-sc-1w8kqhz-0 igLjTD eIGSlG"
+    >
+      <div
+        class="sc-1qr1lby-0 bBOvBH"
+      >
+        <div
+          class="sc-1qr1lby-0 jRuxNE"
+          radius="3"
+        >
+          <span
+            class="truncated"
+          >
+            john
+          </span>
+          <span
+            class="Chevron-sc-1w1czyc-0 fuWAsm"
+          />
+        </div>
+        <div
+          class="sc-1qr1lby-0 ReposList___StyledDiv-sc-1ucb7ap-0 dPhwYJ imZKwy"
+        >
+          <div
+            class="sc-1qr1lby-0 fisVz"
+            radius="3"
+          >
+            <div
+              class="sc-1qr1lby-0 ctapDY"
+              font-weight="600"
+            >
+              <a
+                as="a"
+                href="https://github.com/john/johns-repo"
+                rel="noreferrer"
+                target="_blank"
+              >
+                John's repo
+              </a>
+              <span>
+                2
+                 
+                <span
+                  aria-hidden="false"
+                  aria-label="Star emoji"
+                  class="Emoji-sc-1mu2kvi-0 kHwBut"
+                  role="img"
+                >
+                  ⭐️
+                </span>
+              </span>
+            </div>
+            <span>
+              John's first project
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-1qr1lby-0 bBOvBH"
+      >
+        <div
+          class="sc-1qr1lby-0 jRuxNE"
+          radius="3"
+        >
+          <span
+            class="truncated"
+          >
+            johnny
+          </span>
+          <span
+            class="Chevron-sc-1w1czyc-0 eiiklV"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-1qr1lby-0 bBOvBH"
+      >
+        <div
+          class="sc-1qr1lby-0 jRuxNE"
+          radius="3"
+        >
+          <span
+            class="truncated"
+          >
+            jonnie
+          </span>
+          <span
+            class="Chevron-sc-1w1czyc-0 eiiklV"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="SearchMoreButton___StyledButton-ec5qj5-0 gldqLk"
+    >
+      Search more
+    </button>
+  </div>
+</div>
+`;

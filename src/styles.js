@@ -7,6 +7,11 @@ export const queries = createQueries({
 })
 
 export const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    height: 100%;
+  }
+  
   body {
     margin: 0;
     font-family: sans-serif;
@@ -23,22 +28,14 @@ export const GlobalStyle = createGlobalStyle`
   #root {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-    margin: 16px 16px 8px;
+    padding: 8px;
 
     ${queries.mobile`
-      max-height: calc(100vh - 24px);
+      height: 100%;
       overflow: hidden;
     `}
-  }
 
-  .title {
-    margin: 0;
-    padding: 0.5em 0;
-    /* Fluid font-size: min font-size, scalar, max font-size */
-    font-size: clamp(1rem, 5vw, 2rem);
-    text-align: center;
+    ${queries.desktop`align-items: center;`}
   }
 
   .truncated {

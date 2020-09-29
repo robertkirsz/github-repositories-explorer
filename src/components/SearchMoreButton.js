@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import store from 'store'
 import { fetchUsers } from 'reducers/users'
+import { queries } from 'styles'
 
 export default function SearchMoreButton() {
   const { items, lastSearchedUsername, isUsernameBeingSearched } = useSelector(({ users }) => users)
@@ -20,7 +21,6 @@ export default function SearchMoreButton() {
 }
 
 const Button = styled.button`
-  padding: 8px 0;
   opacity: 0.6;
   text-align: center;
   text-decoration: underline;
@@ -28,4 +28,5 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   border: none;
+  ${queries.mobile`margin-top: auto;`}
 `

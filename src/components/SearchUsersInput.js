@@ -12,11 +12,6 @@ export default function SearchUsersInput() {
   }
 
   return (
-    <DebouncedInput
-      placeholder="Enter username"
-      value={lastSearchedUsername}
-      onChange={handleSearch}
-      css="align-self: center;"
-    />
+    <DebouncedInput placeholder="Enter username" value={lastSearchedUsername} onChange={handleSearch} css="flex: 1;" />
   )
 }

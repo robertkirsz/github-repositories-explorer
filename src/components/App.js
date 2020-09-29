@@ -9,8 +9,10 @@ import SearchUsersInput from 'components/SearchUsersInput'
 export default function App() {
   return (
     <Div columnTop width="100%" maxWidth={480} mobile="overflow: hidden;">
-      <Logo />
-      <SearchUsersInput />
+      <Div mobile={{ listLeft: true }} desktop={{ columnTop: true }}>
+        <Logo />
+        <SearchUsersInput />
+      </Div>
       <SearchInfo />
       <UsersList />
       <SearchMoreButton />

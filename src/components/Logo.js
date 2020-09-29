@@ -7,7 +7,7 @@ export default function Logo() {
 
 const Img = styled.img`
   width: 100%;
-  max-width: 48px;
+  max-width: 40px;
   align-self: center;
   ${queries.desktop`max-width: 96px;`}
 `

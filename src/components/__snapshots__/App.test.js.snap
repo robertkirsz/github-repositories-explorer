@@ -1,34 +1,409 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The main app flow The flow works 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+}
+
+.c0 > *:not(:first-child) {
+  margin-top: 8px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 > *:not(:first-child) {
+  margin-top: 16px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.c7 > *:not(:first-child) {
+  margin-top: 8px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c20 > *:not(:first-child) {
+  margin-top: 16px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c10 > *:not(:first-child) {
+  margin-top: 16px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 100px;
+  -ms-flex: 1 0 100px;
+  flex: 1 0 100px;
+  padding: 8px;
+  background: #f2f2f2;
+  border-radius: 3px;
+}
+
+.c12 > *:not(:first-child) {
+  margin-top: 8px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.c14 > *:not(:first-child) {
+  margin-left: 4px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.c16 > *:not(:first-child) {
+  margin-left: 4px;
+}
+
+.c2 {
+  width: 100%;
+  max-width: 48px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c17 {
+  font-weight: 400;
+  font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;
+}
+
+.c13 {
+  word-break: break-all;
+}
+
+.c15 {
+  color: inherit;
+}
+
+.c18 {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.c5 {
+  padding: 8px 0;
+  opacity: 0.6;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.c11 {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c19 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.c19::before,
+.c19::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 2px;
+  position: absolute;
+  top: 16px;
+  background: black;
+  border-radius: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c19::before {
+  right: 11px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+}
+
+.c19::after {
+  left: 12px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.c9 {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.c9::before,
+.c9::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 2px;
+  position: absolute;
+  top: 8px;
+  background: black;
+  border-radius: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c9::before {
+  right: 11px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+}
+
+.c9::after {
+  left: 12px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.c21 {
+  padding: 8px 0;
+  opacity: 0.6;
+  text-align: center;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.c22 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c3 {
+  padding: 8px;
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.c3:focus {
+  border-color: black;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+@media (max-width:479px) {
+
+}
+
+@media (min-width:480px) {
+  .c2 {
+    max-width: 96px;
+  }
+}
+
+@media (min-width:480px) {
+  .c3 {
+    padding: 12px 8px;
+    font-size: 20px;
+  }
+}
+
 <div>
   <div
-    class="sc-1qr1lby-0 jBmPKi"
+    class="c0"
     width="100%"
   >
-    <img
-      class="Logo__Img-sc-1rvhhdn-0 jNLuxm"
-      role="Logo"
-      src="android-chrome-192x192.png"
-    />
-    <input
-      class="DebouncedInput__Input-sc-13ol9vv-0 hktPfd SearchUsersInput___StyledDebouncedInput-sc-1wtt78f-0 jlbPhN"
-      placeholder="Enter username"
-      value="john"
-    />
     <div
-      class="InfoMessage-sc-4uxl10-0 kEJJce"
+      class="c1"
+    >
+      <img
+        class="c2"
+        role="Logo"
+        src="android-chrome-192x192.png"
+      />
+      <input
+        class="c3 c4"
+        placeholder="Enter username"
+        value="john"
+      />
+    </div>
+    <div
+      class="c5"
     >
       Showing users for "john"
     </div>
     <div
-      class="sc-1qr1lby-0 kHgghI"
+      class="c6"
     >
       <div
-        class="sc-1qr1lby-0 bBOvBH"
+        class="c7"
       >
         <div
-          class="sc-1qr1lby-0 gYdXUP"
+          class="c8"
           radius="3"
         >
           <span
@@ -37,22 +412,24 @@ exports[`The main app flow The flow works 1`] = `
             john
           </span>
           <span
-            class="Chevron-sc-1w1czyc-0 fuWAsm"
+            class="c9"
           />
         </div>
         <div
-          class="sc-1qr1lby-0 ReposList___StyledDiv-sc-1ucb7ap-0 kvLbTO imZKwy"
+          class="c10 c11"
+          overflow="auto"
+          style="max-height: 368px;"
         >
           <div
-            class="sc-1qr1lby-0 ReposListItem___StyledDiv-l2gazs-0 iOZwrW hBcvBQ"
+            class="c12 c13"
             radius="3"
           >
             <div
-              class="sc-1qr1lby-0 gDRfdV"
+              class="c14"
               font-weight="bold"
             >
               <a
-                class="ReposListItem___StyledA-l2gazs-1 dlzyYY truncated"
+                class="c15 truncated"
                 href="https://github.com/john/johns-repo"
                 rel="noreferrer"
                 target="_blank"
@@ -60,21 +437,21 @@ exports[`The main app flow The flow works 1`] = `
                 John's repo
               </a>
               <div
-                class="sc-1qr1lby-0 cppYBD"
+                class="c16"
               >
                 <span>
                   2
                 </span>
                  
                 <span
-                  class="Emoji-sc-1mu2kvi-0 kHwBut"
+                  class="c17"
                 >
                   ⭐️
                 </span>
               </div>
             </div>
             <span
-              class="ReposListItem___StyledSpan-l2gazs-2 fMShgE"
+              class="c18"
             >
               John's first project
             </span>
@@ -82,10 +459,10 @@ exports[`The main app flow The flow works 1`] = `
         </div>
       </div>
       <div
-        class="sc-1qr1lby-0 bBOvBH"
+        class="c7"
       >
         <div
-          class="sc-1qr1lby-0 gYdXUP"
+          class="c8"
           radius="3"
         >
           <span
@@ -94,15 +471,26 @@ exports[`The main app flow The flow works 1`] = `
             johnny
           </span>
           <span
-            class="Chevron-sc-1w1czyc-0 eiiklV"
+            class="c19"
           />
+        </div>
+        <div
+          class="c20 c11"
+          overflow="hidden"
+          style="max-height: 0;"
+        >
+          <div
+            class="c5"
+          >
+            User has no repos :(
+          </div>
         </div>
       </div>
       <div
-        class="sc-1qr1lby-0 bBOvBH"
+        class="c7"
       >
         <div
-          class="sc-1qr1lby-0 gYdXUP"
+          class="c8"
           radius="3"
         >
           <span
@@ -111,13 +499,24 @@ exports[`The main app flow The flow works 1`] = `
             jonnie
           </span>
           <span
-            class="Chevron-sc-1w1czyc-0 eiiklV"
+            class="c19"
           />
+        </div>
+        <div
+          class="c20 c11"
+          overflow="hidden"
+          style="max-height: 0;"
+        >
+          <div
+            class="c5"
+          >
+            User has no repos :(
+          </div>
         </div>
       </div>
     </div>
     <button
-      class="SearchMoreButton__Button-ec5qj5-0 SearchMoreButton___StyledButton-ec5qj5-1 fbBUTl gUcckN"
+      class="c21 c22"
     >
       Show more
     </button>

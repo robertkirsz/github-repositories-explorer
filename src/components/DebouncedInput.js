@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { queries } from 'styles'
 import useDebounce from 'hooks/useDebounce'
 
-export default function DebouncedInput({ value = '', onChange = () => {}, debounceTime = 300, ...props }) {
+export default function DebouncedInput({ value = '', onChange = () => {}, debounceTime = 500, ...props }) {
   const [internalValue, setInternalValue] = useState(value)
   const debouncedValue = useDebounce(internalValue, debounceTime)
 

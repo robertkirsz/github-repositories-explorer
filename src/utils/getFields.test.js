@@ -1,4 +1,4 @@
-import getFields from './getFields'
+import getFields from 'utils/getFields'
 
 describe('getFields', () => {
   const users = [

@@ -1,58 +1,9 @@
-import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { render, fireEvent } from 'test-utils'
-import '@testing-library/jest-dom/extend-expect'
+import { render, fireEvent } from 'tests'
+import { fetchUsersMock, fetchUserReposMock, fetchUsersErrorMock, fetchUserReposErrorMock } from 'mocks'
 import store from 'store'
 import { resetUsersStore } from 'reducers/users'
 import App from 'components/App'
-
-const fetchUsersMock = rest.get('https://api.github.com/search/users', (request, response, context) => {
-  const pages = {
-    1: [
-      {
-        id: 1,
-        login: 'john',
-        repos_url: 'https://api.github.com/users/john/repos'
-      },
-      {
-        id: 2,
-        login: 'johnny',
-        repos_url: 'https://api.github.com/users/johnny/repos'
-      }
-    ],
-    2: [
-      {
-        id: 3,
-        login: 'jonnie',
-        repos_url: 'https://api.github.com/users/jonnie/repos'
-      }
-    ]
-  }
-
-  return response(context.json({ items: pages[request.url.searchParams.get('page')] }))
-})
-
-const fetchUsersErrorMock = rest.get('https://api.github.com/search/users', (_, response, context) =>
-  response(context.status(500))
-)
-
-const fetchUserReposMock = rest.get('https://api.github.com/users/:username/repos', (_, response, context) =>
-  response(
-    context.json([
-      {
-        id: 1,
-        name: "John's repo",
-        description: "John's first project",
-        stargazers_count: 2,
-        html_url: 'https://github.com/john/johns-repo'
-      }
-    ])
-  )
-)
-
-const fetchUserReposErrorMock = rest.get('https://api.github.com/users/:username/repos', (_, response, context) =>
-  response(context.status(500))
-)
 
 const server = setupServer(fetchUsersMock, fetchUserReposMock)
 

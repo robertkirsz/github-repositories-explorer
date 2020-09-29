@@ -7,14 +7,11 @@ export default function ReposList({ isActive = false, areReposBeingFetched = fal
 
   return (
     <Div
-      column
-      listTop={16}
+      columnTop={16}
       mobile={{ margin: '0 48px' }}
       style={{ maxHeight }}
-      css={`
-        overflow: ${maxHeight === 368 ? 'auto' : 'hidden'};
-        transition: 0.3s;
-      `}
+      overflow={repos.length ? 'auto' : 'hidden'}
+      css="transition: 0.3s;"
     >
       {areReposBeingFetched ? (
         <InfoMessage center>Loading...</InfoMessage>

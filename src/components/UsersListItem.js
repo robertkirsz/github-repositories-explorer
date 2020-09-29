@@ -14,7 +14,7 @@ export default function UsersListItem({ user = {} }) {
   }
 
   return (
-    <Div column flexNone listTop>
+    <Div columnTop flexNone>
       <Div
         justifyBetween
         itemsCenter
